@@ -1,5 +1,5 @@
 {
-  "name": "hello",
+  "name": "calculator",
   "esy": {
     "buildsInSource": "_build",
     "build": "dune build -p #{self.name}"
@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "ocaml": "4.14.x",
-    "@opam/dune": "*"
+    "@opam/dune": "*",
+    "@opam/menhir": "*",
+    "@opam/sedlex": "*",
+    "@opam/ppx_deriving": "*"
   },
   "devDependencies": {
     "@opam/ocaml-lsp-server": "*",
