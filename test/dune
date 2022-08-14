@@ -1,0 +1,17 @@
+(library
+ (name calculator_test)
+ (libraries alcotest calculator_lib)
+ (modules
+  (:standard \ test_runner)))
+
+(executable
+ (name test_runner)
+ (libraries alcotest calculator_test)
+ (modules test_runner))
+
+(rule
+ (alias runtest)
+ (deps
+  (:exe test_runner.exe))
+ (action
+  (run %{exe})))
