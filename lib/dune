@@ -1,2 +1,8 @@
 (library
-  (name calculator_lib))
+ (name calculator_lib)
+ (libraries menhirLib sedlex)
+ (preprocess
+   (pps sedlex.ppx)))
+
+(menhir
+ (modules parser))

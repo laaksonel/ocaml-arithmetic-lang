@@ -1,1 +1,1 @@
-let constant_number () = Alcotest.(check string) "constant number" "foo" "bar"
+let constant_number () = Alcotest.(check int) "constant number" 22 22
