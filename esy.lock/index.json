@@ -1,5 +1,5 @@
 {
-  "checksum": "fc676f6cc2b25a9ebdf24f00ddf98a7e",
+  "checksum": "d031d88c83a80302db8e4031909ace18",
   "root": "calculator@link-dev:./package.json",
   "node": {
     "ocaml@4.14.0@d41d8cd9": {
@@ -35,7 +35,8 @@
       "devDependencies": [
         "@opam/utop@opam:2.10.0@9af1bb18",
         "@opam/ocamlformat@opam:0.24.1@80ba1b34",
-        "@opam/ocaml-lsp-server@opam:1.12.4@c24ab770"
+        "@opam/ocaml-lsp-server@opam:1.13.1@c47cf6e0",
+        "@opam/alcotest@opam:1.6.0@89577431"
       ]
     },
     "@opam/zed@opam:3.2.0@20852002": {
@@ -1052,20 +1053,45 @@
         "ocaml@4.14.0@d41d8cd9", "@opam/dune@opam:3.4.1@84d54aea"
       ]
     },
-    "@opam/ocaml-lsp-server@opam:1.12.4@c24ab770": {
-      "id": "@opam/ocaml-lsp-server@opam:1.12.4@c24ab770",
-      "name": "@opam/ocaml-lsp-server",
-      "version": "opam:1.12.4",
+    "@opam/ocaml-syntax-shims@opam:1.0.0@9f361fbb": {
+      "id": "@opam/ocaml-syntax-shims@opam:1.0.0@9f361fbb",
+      "name": "@opam/ocaml-syntax-shims",
+      "version": "opam:1.0.0",
       "source": {
         "type": "install",
         "source": [
-          "archive:https://opam.ocaml.org/cache/sha256/91/919b98027cbc56359dabe8a911d3d24d1706cea8cd04e8173a2d1d3b06f9d846#sha256:919b98027cbc56359dabe8a911d3d24d1706cea8cd04e8173a2d1d3b06f9d846",
-          "archive:https://github.com/ocaml/ocaml-lsp/releases/download/1.12.4/lsp-1.12.4.tbz#sha256:919b98027cbc56359dabe8a911d3d24d1706cea8cd04e8173a2d1d3b06f9d846"
+          "archive:https://opam.ocaml.org/cache/sha256/89/89b2e193e90a0c168b6ec5ddf6fef09033681bdcb64e11913c97440a2722e8c8#sha256:89b2e193e90a0c168b6ec5ddf6fef09033681bdcb64e11913c97440a2722e8c8",
+          "archive:https://github.com/ocaml-ppx/ocaml-syntax-shims/releases/download/1.0.0/ocaml-syntax-shims-1.0.0.tbz#sha256:89b2e193e90a0c168b6ec5ddf6fef09033681bdcb64e11913c97440a2722e8c8"
+        ],
+        "opam": {
+          "name": "ocaml-syntax-shims",
+          "version": "1.0.0",
+          "path": "esy.lock/opam/ocaml-syntax-shims.1.0.0"
+        }
+      },
+      "overrides": [],
+      "dependencies": [
+        "ocaml@4.14.0@d41d8cd9", "@opam/dune@opam:3.4.1@84d54aea",
+        "@esy-ocaml/substs@0.0.1@d41d8cd9"
+      ],
+      "devDependencies": [
+        "ocaml@4.14.0@d41d8cd9", "@opam/dune@opam:3.4.1@84d54aea"
+      ]
+    },
+    "@opam/ocaml-lsp-server@opam:1.13.1@c47cf6e0": {
+      "id": "@opam/ocaml-lsp-server@opam:1.13.1@c47cf6e0",
+      "name": "@opam/ocaml-lsp-server",
+      "version": "opam:1.13.1",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://opam.ocaml.org/cache/sha256/e5/e55f5bd88a5be2ff325fbc3b98eb7317d64de12b3f59d8c812e3ea2824fd0cfc#sha256:e55f5bd88a5be2ff325fbc3b98eb7317d64de12b3f59d8c812e3ea2824fd0cfc",
+          "archive:https://github.com/ocaml/ocaml-lsp/releases/download/1.13.1/lsp-1.13.1.tbz#sha256:e55f5bd88a5be2ff325fbc3b98eb7317d64de12b3f59d8c812e3ea2824fd0cfc"
         ],
         "opam": {
           "name": "ocaml-lsp-server",
-          "version": "1.12.4",
-          "path": "esy.lock/opam/ocaml-lsp-server.1.12.4"
+          "version": "1.13.1",
+          "path": "esy.lock/opam/ocaml-lsp-server.1.13.1"
         }
       },
       "overrides": [],
@@ -1339,7 +1365,7 @@
         "ocaml@4.14.0@d41d8cd9", "@opam/topkg@opam:1.0.5@0aa59f51",
         "@opam/ocamlfind@opam:1.9.5@c23112ba",
         "@opam/ocamlbuild@opam:0.14.1@ead10f40",
-        "@opam/lwt@opam:5.6.1@2a9902ab",
+        "@opam/lwt@opam:5.6.1@2a9902ab", "@opam/fmt@opam:0.9.0@87213963",
         "@opam/cmdliner@opam:1.1.1@03763729",
         "@opam/base-threads@opam:base@36803084",
         "@esy-ocaml/substs@0.0.1@d41d8cd9"
@@ -1438,6 +1464,33 @@
       "devDependencies": [
         "ocaml@4.14.0@d41d8cd9", "@opam/astring@opam:0.8.5@1300cee8"
       ]
+    },
+    "@opam/fmt@opam:0.9.0@87213963": {
+      "id": "@opam/fmt@opam:0.9.0@87213963",
+      "name": "@opam/fmt",
+      "version": "opam:0.9.0",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://opam.ocaml.org/cache/sha512/66/66cf4b8bb92232a091dfda5e94d1c178486a358cdc34b1eec516d48ea5acb6209c0dfcb416f0c516c50ddbddb3c94549a45e4a6d5c5fd1c81d3374dec823a83b#sha512:66cf4b8bb92232a091dfda5e94d1c178486a358cdc34b1eec516d48ea5acb6209c0dfcb416f0c516c50ddbddb3c94549a45e4a6d5c5fd1c81d3374dec823a83b",
+          "archive:https://erratique.ch/software/fmt/releases/fmt-0.9.0.tbz#sha512:66cf4b8bb92232a091dfda5e94d1c178486a358cdc34b1eec516d48ea5acb6209c0dfcb416f0c516c50ddbddb3c94549a45e4a6d5c5fd1c81d3374dec823a83b"
+        ],
+        "opam": {
+          "name": "fmt",
+          "version": "0.9.0",
+          "path": "esy.lock/opam/fmt.0.9.0"
+        }
+      },
+      "overrides": [],
+      "dependencies": [
+        "ocaml@4.14.0@d41d8cd9", "@opam/topkg@opam:1.0.5@0aa59f51",
+        "@opam/ocamlfind@opam:1.9.5@c23112ba",
+        "@opam/ocamlbuild@opam:0.14.1@ead10f40",
+        "@opam/cmdliner@opam:1.1.1@03763729",
+        "@opam/base-unix@opam:base@87d0b2eb",
+        "@esy-ocaml/substs@0.0.1@d41d8cd9"
+      ],
+      "devDependencies": [ "ocaml@4.14.0@d41d8cd9" ]
     },
     "@opam/fix@opam:20220121@17b9a1a4": {
       "id": "@opam/fix@opam:20220121@17b9a1a4",
@@ -1901,6 +1954,43 @@
         "@esy-ocaml/substs@0.0.1@d41d8cd9"
       ],
       "devDependencies": [ "ocaml@4.14.0@d41d8cd9" ]
+    },
+    "@opam/alcotest@opam:1.6.0@89577431": {
+      "id": "@opam/alcotest@opam:1.6.0@89577431",
+      "name": "@opam/alcotest",
+      "version": "opam:1.6.0",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://opam.ocaml.org/cache/sha256/fd/fd00f9668395874ff3b1d7ef566d14efc02fa7dd34123eb25d59355be94b2329#sha256:fd00f9668395874ff3b1d7ef566d14efc02fa7dd34123eb25d59355be94b2329",
+          "archive:https://github.com/mirage/alcotest/releases/download/1.6.0/alcotest-1.6.0.tbz#sha256:fd00f9668395874ff3b1d7ef566d14efc02fa7dd34123eb25d59355be94b2329"
+        ],
+        "opam": {
+          "name": "alcotest",
+          "version": "1.6.0",
+          "path": "esy.lock/opam/alcotest.1.6.0"
+        }
+      },
+      "overrides": [],
+      "dependencies": [
+        "ocaml@4.14.0@d41d8cd9", "@opam/uutf@opam:1.0.3@47c95a18",
+        "@opam/stdlib-shims@opam:0.3.0@72c7bc98",
+        "@opam/re@opam:1.10.4@c4910ba6",
+        "@opam/ocaml-syntax-shims@opam:1.0.0@9f361fbb",
+        "@opam/fmt@opam:0.9.0@87213963", "@opam/dune@opam:3.4.1@84d54aea",
+        "@opam/cmdliner@opam:1.1.1@03763729",
+        "@opam/astring@opam:0.8.5@1300cee8",
+        "@esy-ocaml/substs@0.0.1@d41d8cd9"
+      ],
+      "devDependencies": [
+        "ocaml@4.14.0@d41d8cd9", "@opam/uutf@opam:1.0.3@47c95a18",
+        "@opam/stdlib-shims@opam:0.3.0@72c7bc98",
+        "@opam/re@opam:1.10.4@c4910ba6",
+        "@opam/ocaml-syntax-shims@opam:1.0.0@9f361fbb",
+        "@opam/fmt@opam:0.9.0@87213963", "@opam/dune@opam:3.4.1@84d54aea",
+        "@opam/cmdliner@opam:1.1.1@03763729",
+        "@opam/astring@opam:0.8.5@1300cee8"
+      ]
     },
     "@esy-ocaml/substs@0.0.1@d41d8cd9": {
       "id": "@esy-ocaml/substs@0.0.1@d41d8cd9",
