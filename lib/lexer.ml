@@ -6,15 +6,13 @@ exception Invalid_token
 let whitespace = [%sedlex.regexp? Plus (' ' | '\t')]
 let digit = [%sedlex.regexp? '0' .. '9']
 let int = [%sedlex.regexp? Star '-', Plus digit]
-let plus = [%sedlex.regexp? '+']
-let mult = [%sedlex.regexp? '*']
 
 let rec tokenizer buf =
   match%sedlex buf with
   | whitespace -> tokenizer buf
   | int -> INT (lexeme buf |> int_of_string)
-  | plus -> PLUS
-  | mult -> MULT
+  | "+" -> PLUS
+  | "*" -> MULT
   | "(" -> LEFT_PAREN
   | ")" -> RIGHT_PAREN
   | eof -> EOF
