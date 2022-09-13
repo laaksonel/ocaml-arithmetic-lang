@@ -5,7 +5,25 @@ let constant_number () =
     "constant number" (Interp.interp "22") (string_of_int 22)
 
 let add () =
-  Alcotest.(check string) "add" (Interp.interp "22 + 22") (string_of_int 44)
+  Alcotest.(check string) "add" (Interp.interp "2 + 2") (string_of_int 4)
 
 let mult () =
-  Alcotest.(check string) "mult" (Interp.interp "22 * 22") (string_of_int 484)
+  Alcotest.(check string) "multiple" (Interp.interp "2 * 2") (string_of_int 4)
+
+let mult_many () =
+  Alcotest.(check string)
+    "multiply many"
+    (Interp.interp "2 * 2 * 2")
+    (string_of_int 8)
+
+let multiply_left_add () =
+  Alcotest.(check string)
+    "mulitply and leftside add"
+    (Interp.interp "2 + 2 * 2")
+    (string_of_int 6)
+
+let multiply_right_add () =
+  Alcotest.(check string)
+    "mulitply and add"
+    (Interp.interp "2 * 2 + 2")
+    (string_of_int 6)

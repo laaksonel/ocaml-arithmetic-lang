@@ -5,6 +5,9 @@
 %token MULT
 %token EOF
 
+%left PLUS
+%left MULT
+
 %start <Ast.expr> prog
 
 %%
