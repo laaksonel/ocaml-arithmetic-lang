@@ -10,6 +10,7 @@ let tests =
       ("multiply many", `Quick, Calculator.mult_many);
       ("multiply and add", `Quick, Calculator.multiply_left_add);
       ("multiply and rightside plus", `Quick, Calculator.multiply_right_add);
+      ("group with parentheses", `Quick, Calculator.group_operation);
     ]
 
 let () = Alcotest.run "calculator language tests" [ ("all", tests) ]

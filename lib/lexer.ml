@@ -15,6 +15,8 @@ let rec tokenizer buf =
   | int -> INT (lexeme buf |> int_of_string)
   | plus -> PLUS
   | mult -> MULT
+  | "(" -> LEFT_PAREN
+  | ")" -> RIGHT_PAREN
   | eof -> EOF
   | _ ->
       let uchar = Sedlexing.lexeme_char buf 0 in

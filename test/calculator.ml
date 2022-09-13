@@ -27,3 +27,9 @@ let multiply_right_add () =
     "mulitply and add"
     (Interp.interp "2 * 2 + 2")
     (string_of_int 6)
+
+let group_operation () =
+  Alcotest.(check string)
+    "group with parentheses"
+    (Interp.interp "2 * (2 + 2)")
+    (string_of_int 8)
