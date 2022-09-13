@@ -6,6 +6,7 @@ let tests =
     [
       ("constant number", `Quick, Calculator.constant_number);
       ("add", `Quick, Calculator.add);
+      ("mult", `Quick, Calculator.mult);
     ]
 
 let () = Alcotest.run "calculator language tests" [ ("all", tests) ]

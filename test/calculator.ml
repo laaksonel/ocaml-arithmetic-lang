@@ -6,3 +6,6 @@ let constant_number () =
 
 let add () =
   Alcotest.(check string) "add" (Interp.interp "22 + 22") (string_of_int 44)
+
+let mult () =
+  Alcotest.(check string) "mult" (Interp.interp "22 * 22") (string_of_int 484)

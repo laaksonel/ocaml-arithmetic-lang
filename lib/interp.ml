@@ -12,7 +12,10 @@ let rec step (expr : Ast.expr) : Ast.expr =
   | Binop (bop, e1, e2) -> Binop (bop, step e1, e2)
 
 and step_bop bop v1 v2 =
-  match (bop, v1, v2) with Add, Int a, Int b -> Int (a + b) | _ -> failwith ""
+  match (bop, v1, v2) with
+  | Add, Int a, Int b -> Int (a + b)
+  | Mult, Int a, Int b -> Int (a * b)
+  | _ -> failwith ""
 
 let parse_expr = Lexer.from_string Parser.prog
 
